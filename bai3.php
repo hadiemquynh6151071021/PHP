@@ -65,4 +65,20 @@ $bien_ano_arr = [
 $bien_ano_arr["key1"]();
 $bien_ano_arr["key2"]($temp);
 $bien_ano_arr["key3"]($temp);
+
+// dùng hàm nặc danh với các phần tử của mảng(callback)
+
+$mang=[1,2,3,4,5];
+array_walk($mang,function($key,$value){
+    echo"<br>".$key."=>".$value;
+});
+
+echo"<br>";
+
+//closure sử dụng biến toàn cục
+$mess = "Đây là thông báo";
+$hien_thong_bao = function () use ($mess) {
+    echo "$mess";
+};
+$hien_thong_bao();
 ?>
