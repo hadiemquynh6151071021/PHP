@@ -58,7 +58,7 @@ class Table2{
     }
     }
 
-    $table_4 = new Table4("Mưa");
+    //$table_4 = new Table4("Mưa");
     echo "<pre>";
     Table4::show();
     echo "</pre>";
