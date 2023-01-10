@@ -78,6 +78,89 @@ echo $cut;
 
 echo "<br>";
 
+$pop = "I love you so much";
+$rs = strpos($pop, "so",5);   //trả về vị trí của ký tự hoặc chuỗi trong xâu lớn bắt đầu tìm kiếm tư ký tự thứ 5
+echo $rs;
 
+echo "<br>";
 
+$str = "LOVE";
+$str = strtolower($str);    //hàm biến tất cả chữ hoa thành chữ thường
+echo $str;
+
+echo "<br>";
+
+$str = strtoupper($str);    //hàm biến chữ thường thành chữ hoa
+echo $str;
+
+echo "<br>";
+
+$str = strtolower($str);    //hàm biến tất cả chữ hoa thành chữ thường
+$str = ucfirst($str);   //viết hoa chữ cái đầu
+echo $str;
+
+echo "<br>";
+
+$str = "abcdef";
+echo strlen($str);  //trả về chiều dài chuỗi
+
+echo "<br>";
+
+$str = "   123456   ";
+echo strlen(trim($str));    //loại bỏ dấu cách
+
+echo "<br>";
+
+$str = "No name.
+I love you so much";
+$str = nl2br($str); //định dạng lại dữ liệu người dùng khi người dùng nhập dữ liệu có nhấn phím enter thì xuống dòng
+echo $str;
+
+echo "<br>";
+
+//Mã hóa pass và thông tin cá nhân
+
+$str = "123456";
+$str = md5(($str));
+echo $str;
+
+echo "<br>";
+
+//vô hiệu hóa html
+$str = "<h1>Em là Hà</h1>"; //đáng lẽ đây là tiêu đề nhưng khi run vẫn bình thường
+echo htmlentities($str);    //htmlspecialchars() giống với htmlentities()
+
+//muốn trả về định dạng html thì dùng hàm html_entity_decode()
+
+echo "<br>";
+
+$arr = ["key1" => "value1", "key2" => "value2", "key3" => "value3"];
+
+//chuyển mảng hoạc đối tượng sang json
+$json = json_encode($arr);
+echo $json;
+
+echo"<br>";
+
+$json = json_encode(new class ("Red", 4) {
+    public $mau_sac;
+    public $so_chan;
+    public function __construct($mau_sac, $so_chan)
+    {
+        $this->mau_sac = $mau_sac;
+        $this->so_chan = $so_chan;
+    }
+    public function show()
+    {
+        echo $this->mau_sac . "và" . $this->so_chan;
+    }
+}); //class này là đối tượng nặc danh
+
+echo $json;
+
+echo"<br>";
+
+// chuyển json về bình thường
+$temp = json_decode($json);
+var_dump($temp);
 ?>
